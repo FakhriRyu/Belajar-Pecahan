@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+@theme {
+  --font-fredoka: "Fredoka", cursive, sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-nunito), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f7f4ea;
+    background-image: radial-gradient(#e5dec9 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-fun {
+    font-family: var(--font-fredoka), cursive, sans-serif;
+  }
+}
+
+/* 3D Chunky Duolingo-style Tactile Buttons */
+.btn-3d {
+  position: relative;
+  border-bottom-width: 5px;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+}
+
+.btn-3d:hover {
+  filter: brightness(1.05);
+}
+
+.btn-3d:active:not(:disabled) {
+  transform: translateY(4px);
+  border-bottom-width: 1px;
+  margin-bottom: 4px;
+}
+
+.btn-3d:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-bottom-width: 3px;
+}
+
+/* Color variations for 3D buttons */
+.btn-3d-green {
+  background-color: #58cc02;
+  border-color: #46a302;
+  color: #ffffff;
+}
+
+.btn-3d-blue {
+  background-color: #1cb0f6;
+  border-color: #1899d6;
+  color: #ffffff;
+}
+
+.btn-3d-yellow {
+  background-color: #ffc800;
+  border-color: #e5a400;
+  color: #533800;
+}
+
+.btn-3d-red {
+  background-color: #ff4b4b;
+  border-color: #ea2b2b;
+  color: #ffffff;
+}
+
+.btn-3d-purple {
+  background-color: #ce82ff;
+  border-color: #a545ee;
+  color: #ffffff;
+}
+
+.btn-3d-wood {
+  background-color: #fef08a;
+  border-color: #ca8a04;
+  color: #713f12;
+}
+
+.btn-3d-white {
+  background-color: #ffffff;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+/* Toca Boca Toy Card & Tabletop Styles */
+.card-toy {
+  background-color: #ffffff;
+  border: 4px solid #f0e6d2;
+  box-shadow: 0 8px 0 0 #e2d3b5, 0 12px 20px -4px rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+}
+
+.card-toy-wood {
+  background-color: #fff9ed;
+  border: 4px solid #ebd5b3;
+  box-shadow: 0 8px 0 0 #d9bc8c, 0 12px 20px -4px rgba(120, 53, 15, 0.08);
+  border-radius: 28px;
+}
+
+/* Red-White Italian Pizzeria Tablecloth Check Pattern */
+.bg-pizzeria-check {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(45deg, #fee2e2 25%, transparent 25%), 
+    linear-gradient(-45deg, #fee2e2 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #fee2e2 75%), 
+    linear-gradient(-45deg, transparent 75%, #fee2e2 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Animations */
+@keyframes hop {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  30% {
+    transform: translateY(-12px) scale(0.95, 1.08);
+  }
+  60% {
+    transform: translateY(0) scale(1.05, 0.95);
+  }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-hop {
+  animation: hop 2s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
+.animate-float-bob {
+  animation: floatBob 2.5s ease-in-out infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf6e7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border: 2px solid #fdf6e7;
+  border-radius: 9999px;
+}
+
+
