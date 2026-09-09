@@ -143,21 +143,6 @@ export const App: React.FC = () => {
           />
         )}
       </main>
-
-      {/* Playful Footer */}
-      <footer className="mt-auto border-t-2 border-amber-200/80 bg-white/70 py-4 px-4 text-center select-none">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-semibold text-slate-500">
-          <div className="flex items-center gap-1.5 text-amber-900 font-bold">
-            <img src="/favicon.svg" alt="Logo" className="w-4 h-4 rounded" />
-            <span>Pecahan Ajaib</span>
-            <span className="text-slate-400">•</span>
-            <span className="text-slate-600">Media Belajar Pecahan Interaktif</span>
-          </div>
-          <p className="m-0 text-slate-400">
-            Terinspirasi oleh simulasi PhET Colorado • Didesain Khusus untuk Anak Sekolah SD/SMP
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
