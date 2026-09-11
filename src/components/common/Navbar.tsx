@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NavTab } from '../../types/fractions';
 import { sound } from '../../utils/audioSynth';
-import { Volume2, VolumeX, Music, Trophy, Compass, Map, Pizza, BookOpen } from 'lucide-react';
+import { Volume2, VolumeX, Music, Trophy, Compass, Map, Pizza } from 'lucide-react';
 
 interface NavbarProps {
   currentTab: NavTab;
@@ -63,17 +63,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </h1>
               </div>
               <p className="text-[11px] font-bold text-[#b45309] m-0">
-                {lang === 'id' ? 'Media Belajar Matematika Interaktif' : 'Interactive Math Learning'}
+                {lang === 'id' ? 'Media Belajar Pecahan Senilai' : 'Interactive Fraction Learning'}
               </p>
             </div>
           </div>
 
           {/* Desktop Navigation Tabs */}
-          <nav className="flex items-center gap-1.5 lg:gap-2">
+          <nav className="flex items-center gap-2">
             {/* Peta Pecahan (Game) */}
             <button
               onClick={() => handleTabClick('game')}
-              className={`btn-3d px-3 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
+              className={`btn-3d px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
                 currentTab === 'game'
                   ? 'btn-3d-green shadow-sm'
                   : 'btn-3d-white hover:bg-slate-50'
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Lab Eksplorasi */}
             <button
               onClick={() => handleTabClick('lab')}
-              className={`btn-3d px-3 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
+              className={`btn-3d px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
                 currentTab === 'lab'
                   ? 'btn-3d-blue shadow-sm'
                   : 'btn-3d-white hover:bg-slate-50'
@@ -96,23 +96,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>{lang === 'id' ? 'Lab Timbangan' : 'Scale Lab'}</span>
             </button>
 
-            {/* Materi Pengurangan (Baru) */}
-            <button
-              onClick={() => handleTabClick('subtraction')}
-              className={`btn-3d px-3 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
-                currentTab === 'subtraction'
-                  ? 'btn-3d-yellow shadow-sm ring-2 ring-[#f59e0b]'
-                  : 'btn-3d-white hover:bg-slate-50'
-              }`}
-            >
-              <BookOpen className="w-4 h-4" />
-              <span>{lang === 'id' ? 'Pengurangan' : 'Subtraction'}</span>
-            </button>
-
             {/* Kedai Pizza */}
             <button
               onClick={() => handleTabClick('pizza')}
-              className={`btn-3d px-3 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
+              className={`btn-3d px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
                 currentTab === 'pizza'
                   ? 'btn-3d-red shadow-sm'
                   : 'btn-3d-white hover:bg-slate-50'
@@ -125,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Ruang Trofi */}
             <button
               onClick={() => handleTabClick('trophy')}
-              className={`btn-3d px-3 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
+              className={`btn-3d px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-black font-fun flex items-center gap-1.5 ${
                 currentTab === 'trophy'
                   ? 'btn-3d-purple shadow-sm'
                   : 'btn-3d-white hover:bg-slate-50'
@@ -248,12 +235,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </div>
 
-          {/* Mobile Row 2: 5-Column Compact Tab Bar */}
-          <nav className="grid grid-cols-5 gap-1 w-full pt-0.5">
+          {/* Mobile Row 2: 4-Column Compact Tab Bar */}
+          <nav className="grid grid-cols-4 gap-1.5 w-full pt-0.5">
             {/* Game Tab */}
             <button
               onClick={() => handleTabClick('game')}
-              className={`btn-3d py-1.5 px-0.5 rounded-xl text-[10px] font-black font-fun flex flex-col sm:flex-row items-center justify-center gap-0.5 ${
+              className={`btn-3d py-1.5 px-1 rounded-xl text-[11px] font-black font-fun flex items-center justify-center gap-1 ${
                 currentTab === 'game' ? 'btn-3d-green' : 'btn-3d-white'
               }`}
             >
@@ -264,7 +251,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Lab Tab */}
             <button
               onClick={() => handleTabClick('lab')}
-              className={`btn-3d py-1.5 px-0.5 rounded-xl text-[10px] font-black font-fun flex flex-col sm:flex-row items-center justify-center gap-0.5 ${
+              className={`btn-3d py-1.5 px-1 rounded-xl text-[11px] font-black font-fun flex items-center justify-center gap-1 ${
                 currentTab === 'lab' ? 'btn-3d-blue' : 'btn-3d-white'
               }`}
             >
@@ -272,21 +259,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span>{lang === 'id' ? 'Lab' : 'Lab'}</span>
             </button>
 
-            {/* Subtraction Material Tab */}
-            <button
-              onClick={() => handleTabClick('subtraction')}
-              className={`btn-3d py-1.5 px-0.5 rounded-xl text-[10px] font-black font-fun flex flex-col sm:flex-row items-center justify-center gap-0.5 ${
-                currentTab === 'subtraction' ? 'btn-3d-yellow' : 'btn-3d-white'
-              }`}
-            >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>{lang === 'id' ? 'Kurang' : 'Subtract'}</span>
-            </button>
-
             {/* Pizza Tab */}
             <button
               onClick={() => handleTabClick('pizza')}
-              className={`btn-3d py-1.5 px-0.5 rounded-xl text-[10px] font-black font-fun flex flex-col sm:flex-row items-center justify-center gap-0.5 ${
+              className={`btn-3d py-1.5 px-1 rounded-xl text-[11px] font-black font-fun flex items-center justify-center gap-1 ${
                 currentTab === 'pizza' ? 'btn-3d-red' : 'btn-3d-white'
               }`}
             >
@@ -297,7 +273,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Trophy Tab */}
             <button
               onClick={() => handleTabClick('trophy')}
-              className={`btn-3d py-1.5 px-0.5 rounded-xl text-[10px] font-black font-fun flex flex-col sm:flex-row items-center justify-center gap-0.5 ${
+              className={`btn-3d py-1.5 px-1 rounded-xl text-[11px] font-black font-fun flex items-center justify-center gap-1 ${
                 currentTab === 'trophy' ? 'btn-3d-purple' : 'btn-3d-white'
               }`}
             >

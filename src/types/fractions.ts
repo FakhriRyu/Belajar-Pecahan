@@ -69,4 +69,4 @@ export interface UserProgress {
   unlockedBadges: string[];
 }
 
-export type NavTab = 'game' | 'lab' | 'pizza' | 'subtraction' | 'trophy';
+export type NavTab = 'lab' | 'game' | 'pizza' | 'trophy';
