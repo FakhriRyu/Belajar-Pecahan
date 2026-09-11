@@ -6,6 +6,7 @@ import { LevelSelect } from './components/game/LevelSelect';
 import { MatchGame } from './components/game/MatchGame';
 import { PizzaShopGame } from './components/pizzaShop/PizzaShopGame';
 import { TrophyRoom } from './components/achievements/TrophyRoom';
+import { SubtractionMaterial } from './components/subtraction/SubtractionMaterial';
 
 const STORAGE_KEY = 'magic_fractions_progress_v1';
 
@@ -129,6 +130,18 @@ export const App: React.FC = () => {
               />
             )}
           </>
+        )}
+
+        {currentTab === 'subtraction' && (
+          <SubtractionMaterial
+            onEarnCoins={(earned) => {
+              setProgress((prev) => ({
+                ...prev,
+                coins: prev.coins + earned,
+              }));
+            }}
+            lang={lang}
+          />
         )}
 
         {currentTab === 'pizza' && (
