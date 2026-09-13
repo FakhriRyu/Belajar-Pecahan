@@ -241,8 +241,8 @@ export const IntroModule: React.FC<IntroModuleProps> = ({
           </h2>
           <p className="text-xs sm:text-sm font-bold text-[#78350f] m-0">
             {lang === 'id'
-              ? 'Materi Pembelajaran Matematika SD/MI Kelas IV • Kurikulum Merdeka'
-              : 'Elementary Grade 4 Mathematics Lesson Module'}
+              ? 'Karya Revi Dwi Anjuni, S.Pd.'
+              : 'Created by Revi Dwi Anjuni, S.Pd.'}
           </p>
         </div>
 
