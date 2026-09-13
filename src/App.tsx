@@ -6,6 +6,7 @@ import { LevelSelect } from './components/game/LevelSelect';
 import { MatchGame } from './components/game/MatchGame';
 import { PizzaShopGame } from './components/pizzaShop/PizzaShopGame';
 import { TrophyRoom } from './components/achievements/TrophyRoom';
+import { IntroModule } from './components/intro/IntroModule';
 
 const STORAGE_KEY = 'magic_fractions_progress_v1';
 
@@ -19,7 +20,7 @@ const defaultProgress: UserProgress = {
 };
 
 export const App: React.FC = () => {
-  const [currentTab, setCurrentTab] = useState<NavTab>('game');
+  const [currentTab, setCurrentTab] = useState<NavTab>('intro');
   const [lang, setLang] = useState<'id' | 'en'>('id');
   const [selectedLevelId, setSelectedLevelId] = useState<number | null>(null);
 
@@ -102,6 +103,23 @@ export const App: React.FC = () => {
 
       {/* Main Feature Content Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto p-3 sm:p-6 flex flex-col justify-start items-center">
+        {currentTab === 'intro' && (
+          <IntroModule
+            onStartAdventure={() => {
+              setCurrentTab('game');
+              setSelectedLevelId(null);
+            }}
+            onOpenLab={() => setCurrentTab('lab')}
+            onEarnCoins={(earned) => {
+              setProgress((prev) => ({
+                ...prev,
+                coins: prev.coins + earned,
+              }));
+            }}
+            lang={lang}
+          />
+        )}
+
         {currentTab === 'lab' && (
           <EqualityLab onDiscoverEquality={handleDiscoverEquality} lang={lang} />
         )}
